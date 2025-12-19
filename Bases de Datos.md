@@ -8,7 +8,7 @@
 - [Cuaderno](https://colab.research.google.com/drive/1EvOXBVEdyPhLbv6EAvwRVD2TCFOsiFpN)
 
 
-#### Otros avances - Ampliar alcance luego de alcanzar objetivo
+#### Otros avances - Ampliar alcance luego de llegar al objetivo
 
 **Juan Carlos Vanegas**
 - [Base de Datos](https://huggingface.co/datasets/tyqiangz/multilingual-sentiments)  
