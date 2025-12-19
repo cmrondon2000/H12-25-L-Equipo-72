@@ -11,6 +11,6 @@
 #### Otros avances - Ampliar alcance luego de alcanzar objetivo
 
 **Juan Carlos Vanegas**
-- [Base de Datos](https://huggingface.co/datasets/tyqiangz/multilingual-sentiments).)  
+- [Base de Datos](https://huggingface.co/datasets/tyqiangz/multilingual-sentiments)  
 - [Cuaderno](https://colab.research.google.com/drive/1WyCtTFHalUb7yb4MZnvdIYwCXnfvyxuQ?usp=sharing)  
 
