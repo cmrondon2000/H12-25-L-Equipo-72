@@ -30,12 +30,15 @@
 - **Neldy Rolando Velásquez Samolo** 🇬🇹  
   https://www.linkedin.com/in/neldyrvelasam  
 
+- **Yeikol Alberto Zúñiga Vargas** 🇨🇷  
+  https://www.linkedin.com/in/yeikol-alberto-z%C3%BA%C3%B1iga-vargas-a1770a60
+  
+- **José Julian Gómez Brizuela** 🇨🇱  
+
 - **Griselda González** 🇲🇽  
 
 - **Lupita Baioli** 🇲🇽  
-
-- **Yeikol Alberto Zúñiga Vargas** 🇨🇷  
-
+  
 - **Omar Osuna Hernández** 🇲🇽  
 
 ---
