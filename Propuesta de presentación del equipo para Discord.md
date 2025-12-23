@@ -34,11 +34,12 @@
   https://www.linkedin.com/in/yeikol-alberto-z%C3%BA%C3%B1iga-vargas-a1770a60
   
 - **José Julian Gómez Brizuela** 🇨🇱  
-  https://www.linkedin.com/in/juliangomezbrizuela/
+  https://www.linkedin.com/in/juliangomezbrizuela
 
+- **Lupita Baioli** 🇲🇽
+  https://www.linkedin.com/in/lupita-bailon-a45003172
+   
 - **Griselda González** 🇲🇽  
-
-- **Lupita Baioli** 🇲🇽  
   
 - **Omar Osuna Hernández** 🇲🇽  
 
