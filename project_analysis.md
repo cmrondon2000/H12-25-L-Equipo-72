@@ -1,0 +1,210 @@
+# H12-25-L – Team 72
+
+## Project 1: SentimentAPI — Sentiment Analysis of ONE Feedback
+
+## 1. Project Analysis
+
+### 1.1 Business Problem
+Companies receive large volumes of comments (reviews, surveys, social media) and cannot analyze them manually. This leads to:
+
+- Slow customer service response  
+- Loss of improvement opportunities  
+- Difficulty measuring customer satisfaction over time  
+
+### 1.2 Proposed Solution
+A sentiment analysis API that:
+
+- Receives a text input  
+- Classifies sentiment (Positive / Neutral / Negative or binary)  
+- Returns the prediction with its probability  
+- Can be easily integrated with other systems  
+
+### 1.3 Value for the Client
+Even with a simple model, it enables:
+
+- Prioritization of negative comments  
+- Monitoring of marketing campaigns  
+- Detection of satisfaction trends  
+- Reduction of manual effort  
+
+### 1.4 Technical Scope Suitable for a Hackathon
+- Classic NLP model: TF-IDF + Logistic Regression or Naive Bayes  
+- Simple REST API  
+- Clear integration between Data Science (DS) and Back-End (BE)  
+- Functional MVP > excessive sophistication  
+
+---
+
+## PHASE 1 – Definition and Alignment (DS + BE)
+
+### 1.1 Define Functional Scope (Joint)
+**Owners:** DS + BE  
+**Dependencies:** None  
+
+Decide:
+
+- Binary or ternary classification  
+- Language (Spanish / Portuguese / both)  
+- Define the integration contract:
+  - Input  
+  - Output  
+
+This contract unlocks parallel work.
+
+---
+
+## PHASE 2 – Data Science: Model Preparation
+
+### 2.1 Dataset Collection
+**Owner:** Data Science  
+**Dependencies:** Phase 1  
+
+- Public reviews, tweets, surveys, etc.  
+- Dataset containing:
+  - Text  
+  - Sentiment label  
+
+### 2.2 EDA and Data Cleaning
+**Owner:** Data Science  
+**Dependencies:** 2.1  
+
+- Remove duplicates  
+- Normalize text (lowercase, symbols)  
+- Class distribution analysis  
+- Basic visualizations  
+
+### 2.3 Feature Engineering (TF-IDF)
+**Owner:** Data Science  
+**Dependencies:** 2.2  
+
+- Text vectorization using `TfidfVectorizer`  
+- Tuning of:
+  - n-grams  
+  - stopwords  
+  - max_features (if applicable)  
+
+### 2.4 Model Training
+**Owner:** Data Science  
+**Dependencies:** 2.3  
+
+Train:
+- Logistic Regression or  
+- Naive Bayes  
+
+- Train/test split  
+
+### 2.5 Model Evaluation
+**Owner:** Data Science  
+**Dependencies:** 2.4  
+
+Metrics:
+- Accuracy  
+- Precision  
+- Recall  
+- F1-score  
+
+Decide whether the model is sufficient for an MVP.
+
+### 2.6 Model Serialization
+**Owner:** Data Science  
+**Dependencies:** 2.5  
+
+- Save the complete pipeline  
+- Deliver to the BE team:
+  - `.joblib` file  
+  - Python inference example  
+  - Label mapping (e.g., `0 = Negative`)  
+
+This step is a **critical blocker** for Back-End.
+
+---
+
+## PHASE 3 – Back-End: API Development
+
+### 3.1 Create Spring Boot Project
+**Owner:** Back-End  
+**Dependencies:** Phase 1  
+
+Basic configuration:
+- Spring Web  
+- Validation  
+- Logging  
+- Clean structure (controller, service, dto)  
+
+### 3.2 Implement `/sentiment` Endpoint
+**Owner:** Back-End  
+**Dependencies:** 3.1  
+
+- `POST /sentiment`  
+- Input DTO  
+
+### 3.3 Validation and Error Handling
+**Owner:** Back-End  
+**Dependencies:** 3.2  
+
+- Empty or very short text → `400 Bad Request`  
+- Clear and consistent JSON messages  
+
+### 3.4 Integration with DS Model
+**Owner:** Back-End  
+**Dependencies:** 2.6  
+
+**Option A (simpler):**
+- Python microservice (FastAPI) with the model  
+- BE calls it via HTTP  
+
+**Option B (advanced):**
+- Load exported model (ONNX)  
+
+Integration depends directly on the DS deliverable.
+
+---
+
+## PHASE 4 – Testing and Validation
+
+### 4.1 Manual Tests (Postman / cURL)
+**Owners:** BE + DS  
+**Dependencies:** Phase 3 completed  
+
+Three real examples:
+- Positive  
+- Neutral  
+- Negative  
+
+### 4.2 Logs and Stability
+**Owner:** Back-End  
+**Dependencies:** 4.1  
+
+- Request logging  
+- Handling of unexpected exceptions  
+
+---
+
+## PHASE 5 – Documentation and Delivery
+
+### 5.1 Final Notebook (DS)
+**Owner:** Data Science  
+**Dependencies:** Phase 2 completed  
+
+- Clean code  
+- Clear comments  
+- Results and conclusions  
+
+### 5.2 Project README
+**Owners:** DS + BE  
+**Dependencies:** Phases 2–4  
+
+Include:
+- How to run the model  
+- How to start the API  
+- Request/response examples  
+- Dependencies and versions  
+
+### 5.3 Demo Preparation
+**Owners:** DS + BE  
+**Dependencies:** All previous phases  
+
+Show:
+- Endpoint call  
+- Model response  
+- Simple explanation of the flow  
